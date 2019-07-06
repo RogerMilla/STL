@@ -1,0 +1,32 @@
+#include "mbed.h"
+
+DigitalOut myGREENled(PD_12,0);
+DigitalOut myREDled(PD_14,0);
+DigitalOut myYELLOWled(PD_13,0);
+DigitalIn  Botao(PA_0);
+
+
+
+int main() {
+    
+
+  while(1){  
+        
+    while(!Botao) {
+             
+                myREDled = 1;           //ACENDE LED VERMELHO      
+        wait(5);
+                myREDled = 0;           //APAGA LED VERMELHO 
+        wait(0.2);
+                myGREENled = 1;         //ACENDE  LED VERDE 
+        wait(3);
+                myGREENled = 0;         //APAGA LED VERDE
+        wait(0.2);
+                myYELLOWled = 1;        //ACENDE LED AMARELO 
+        wait(2);
+                myYELLOWled= 0;         //APAGA LED AMARELO
+        wait(0.2);
+        
+    }
+  } 
+}
